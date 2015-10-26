@@ -95,7 +95,7 @@ function pat_estimate_time_reading($atts)
 		$m = floor($word / $frequence);
 		$s = floor($word % $frequence / ($frequence / 60));
 
-		$est = $title . $m . ' ' . _pat_plural($m, $minute, $plural) .( $short ? '' : ', ' . $s . ' ' . _pat_plural($s, $second, $plural) ).'.';
+		$est = $title . ( $m > 0 ? $m . ' ' . _pat_plural($m, $minute, $plural) . ($short ? '' : ', ') . $s . ' ' . _pat_plural($s, $second, $plural) : $s . ' ' . _pat_plural($s, $second, $plural) ) . '.';
 
 		if ($break == 'br' or $break == 'hr')
 			$break = "<$break />".n;
