@@ -7,11 +7,11 @@ This (very simple) Textpattern CMS plugin offers 2 tags to display a word counte
 
 ##Usages
 
-TXP tag
+###TXP tag
 
     <txp:pat_reading_time text="" title="" before="" charlist="" wraptag="" break="" class="" />
 
-##Attributes
+###Attributes
 
     `text` (string): set which content to apply for the result, among body or excerpt. Default: `body`.
     `title` (string): set the text before the result. Default: "`Words: `".
@@ -22,11 +22,11 @@ TXP tag
     `break` (string): HTML break tag. Default: `br`.
     `class` (string): HTML class attribute. Default: "`word-count`".
 
-#TXP tag
+###TXP tag
 
     <txp:pat_estimate_time_reading text="" title="" short="" minute="" second="" plural="" wraptag="" break="" class="" />
     
-##Attributes
+###Attributes
 
     `text` (string): set which content to apply for the result, among body or excerpt. Default: `body`.
     `title` (string): set the text before the result. Default: "`Time to read: `".
@@ -39,7 +39,7 @@ TXP tag
     class (string): HTML class attribute. Default: "time-reading".
     `frequence` (integer): the number of words read by minutes (average). Default: `200`.
 
-#Changelog
+###Changelog
 
     26th October 2015. v 0.2.1. Display nothing if text content is empty.
     6th August 2014. v 0.2. Add "short" attribute in order to show only minutes time.
