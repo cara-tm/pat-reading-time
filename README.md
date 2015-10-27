@@ -54,7 +54,7 @@ This (very simple) Textpattern CMS plugin offers 2 tags to display a word counte
 
 ###Changelog
 
-> 26th October 2015. v 0.2.1. Display nothing if text content is empty. Do not display "0 time".
+> 26th October 2015. v 0.2.1. Display nothing if text content is empty. Do not display "0 minute".
 > 
 > 6th August 2014. v 0.2. Add "short" attribute in order to show only minutes time.
 > 
