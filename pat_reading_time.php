@@ -12,6 +12,17 @@
 
 
 /**
+ * This plugin tags registry
+ *
+ */
+if (class_exists('Textpattern_Tag_Registry')) {
+	Txp::get('Textpattern_Tag_Registry')
+		->register('pat_reading_time')
+		->register('pat_estimate_time_reading');
+}
+
+
+/**
  * Return word count
  *
  * @param  atts
