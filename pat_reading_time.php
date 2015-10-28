@@ -1,6 +1,6 @@
 <?php
 /**
- * pat_words_count
+ * pat_reading_time/pat_estimate_time_reading
  * @author:  © Patrick LEFEVRE, all rights reserved. <patrick[dot]lefevre[at]gmail[dot]com>
  * @link:    http://pat-reading-time.cara-tm.com
  * @type:    Public
