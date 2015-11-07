@@ -15,8 +15,8 @@
  * This plugin tags registry
  *
  */
-if (class_exists('Textpattern_Tag_Registry')) {
-	Txp::get('Textpattern_Tag_Registry')
+if (class_exists('\Textpattern\Tag\Registry')) {
+	Txp::get('\Textpattern\Tag\Registry')
 		->register('pat_reading_time')
 		->register('pat_estimate_time_reading');
 }
