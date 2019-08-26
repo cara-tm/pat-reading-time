@@ -6,7 +6,7 @@
  * @type:    Public
  * @prefs:   no
  * @order:   5
- * @version: 0.2.1
+ * @version: 0.2.2
  * @license: GPLv2
 */
 
@@ -15,8 +15,8 @@
  * This plugin tags registry
  *
  */
-if (class_exists('\Textpattern\Tag\Registry')) {
-	Txp::get('\Textpattern\Tag\Registry')
+if (class_exists('Textpattern_Tag_Registry')) {
+	Txp::get('Textpattern_Tag_Registry')
 		->register('pat_reading_time')
 		->register('pat_estimate_time_reading');
 }
@@ -54,7 +54,7 @@ function pat_reading_time($atts)
 	if ($content) {
 
 		$result = _pat_words_count($content, $charlist);
-		$result = ( $before == true ? _pat_plural($result, $title, $plural).' '.$result : $result.' '._pat_plural($result, $title, $plural) ).'.';
+		$result = ( $before === true ? _pat_plural($result, $title, $plural).' '.$result : $result.' '._pat_plural($result, $title, $plural) ).'.';
 		if ($break == 'br' or $break == 'hr')
 			$break = "<$break />".n;
 		else
@@ -85,6 +85,7 @@ function pat_estimate_time_reading($atts)
 	extract(lAtts(array(
 		'text'		=> 'body',
 		'title'		=> 'Time to read: ',
+		'before' 	=> 1,
 		'short'		=> false,
 		'minute'	=> 'minute',
 		'second' 	=> 'second',
@@ -106,7 +107,11 @@ function pat_estimate_time_reading($atts)
 		$m = floor($word / $frequence);
 		$s = floor($word % $frequence / ($frequence / 60));
 
-		$est = $title . ( $m > 0 ? $m . ' ' . _pat_plural($m, $minute, $plural) . ($short ? '' : ', ') . $s . ' ' . _pat_plural($s, $second, $plural) : $s . ' ' . _pat_plural($s, $second, $plural) ) . '.';
+		$icon = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="arcs" style="vertical-align:text-bottom"><switch><g><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></g><foreignObject width="24" height="0">⟳</foreignObject></svg>';
+
+		$result = _pat_plural($m, $minute, $plural).($short ? '' : ', ').$s.' '._pat_plural($s, $second, $plural);
+
+		$est = ($before === true ? $icon.' '.$title.( $m > 0 ? $m .' '. $result : $s . ' ' ._pat_plural($s, $second, $plural)) : ( $m > 0 ? $icon.' '.$m.' '.$result : $icon.' '.$s .' '. _pat_plural($s, $second, $plural)). ' '.$title) .'.';
 
 		if ($break == 'br' or $break == 'hr')
 			$break = "<$break />".n;

@@ -1,0 +1,62 @@
+# Name: pat_reading_time v0.2.2 (compressed)
+# Type: Public plugin
+# Display a words counter & estimated reading time for articles.
+# Author: Patrick LEFEVRE
+# URL: http://twitter.com/lowel
+# Recommended load order: 5
+
+# .....................................................................
+# This is a plugin for Textpattern CMS - http://textpattern.com/
+# To install: textpattern > admin > plugins
+# Paste the following text into the 'Install plugin' box:
+# .....................................................................
+
+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
+eyQGqh0AAA==
