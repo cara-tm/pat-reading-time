@@ -16,8 +16,7 @@
  *
  */
 if (class_exists('\Textpattern\Tag\Registry')) {
-	Txp::get('\Textpattern\Tag\Registry')->register('etc_date')
-		->register('pat_reading_time')
+	Txp::get('\Textpattern\Tag\Registry')
 		->register('pat_reading_time')
 		->register('pat_estimate_time_reading');
 }
