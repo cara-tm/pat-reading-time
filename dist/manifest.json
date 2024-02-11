@@ -1,0 +1,9 @@
+{
+    "version": "0.2.3",
+    "type": 0,
+    "order": 5,
+    "author": "Patrick LEFEVRE",
+    "author_uri": "http:\/\/twitter.com\/lowel",
+    "description": "Display a words counter & estimated reading time for articles.",
+    "flags": 0
+}

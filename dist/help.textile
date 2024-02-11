@@ -1,0 +1,47 @@
+h1(#pat_reading_time). pat_reading_time
+
+This (very simple) Textpattern CMS plugin offers 2 tags to display a word counter and/or an estimated time reading for articles.
+
+h2(#usages). Usages
+
+h3(#txp-tag). TXP tag
+
+@<txp:pat_reading_time text="" title="" before="" plural="" wraptag="" break="" class="" />@
+
+h3(#attributes). Attributes
+
+* @text@ (string): set which content to apply for the result, among *body* or *excerpt*. Default: _body_.
+* @title@ (string): set the text before the result. Default: &quot;_Words:_ &quot;.
+* @plural@ (string): plural character for &quot;word&quot;. Default: &quot;_s_&quot;.
+* @before@ (boolean): position with the count for the content of the &quot;title&quot; attribute (among _before_: *1* or _after_: *0*). Default: &quot;_1_&quot;.
+* @wraptag@ (letter): HTML container tag. Default: _p_.
+* @break@ (string): HTML break tag. Default: _br_.
+* @class@ (string): HTML class attribute. Default: &quot;_word&#45;count_&quot;.
+
+h3(#txp-tag-1). TXP tag
+
+@<txp:pat_estimate_time_reading text="" title="" short="" before="" minute="" second="" plural="" wraptag="" break="" class="" color="" size="" frequence="" />@
+
+h3(#attributes-1). Attributes
+
+* @text@ (string): set which content to apply for the result, among *body* or *excerpt*. Default: _body_.
+* @title@ (string): set the text before the result. Default: &quot;_Time to read:_ &quot;.
+* @short@ (boolean): display only minutes time. Default: &quot;_0_&quot; (display full estimation time with seconds).
+* @before@ (boolean): position with the count for the content of the &quot;title&quot; attribute (among _before_: *1* or _after_: *0*). Default: &quot;_1_&quot;.
+* @wraptag@ (string): HTML container tag. Default: _p_.
+* @break@ (string): HTML breaking tag. Default: _br_.
+* @minute@ (integer): word for the &quot;minute&quot; time (i18n support). Default: &quot;_minute_&quot;.
+* @second@ (integer): word for the &quot;second&quot; time (i18n support). Default: &quot;_second_&quot;.
+* @plural@ (string): plural character for &quot;minute&quot; &amp; &quot;second&quot;. Default: &quot;_s_&quot;.
+* @class@ (string): HTML class attribute. Default: &quot;_time&#45;reading_&quot;.
+* @color@ (string): the color to apply for the SVG clock icon. Default: @#5d5d5d@.
+* @size@ (integer): the size for the SVG clock icon. Default: @18@.
+* @frequence@ (integer): the number of words read by minutes (average). Default: _200_.
+
+h2(#changelog). Changelog
+
+* February 8, 2024. v 0.2.3. Adding attributes. Cosmetic changes. 
+* August 26, 2019. v 0.2.2. Add an SVG icon -with fallback-.
+* October 26, 2015. v 0.2.1. Display nothing if text content is empty.
+* August 6, 2014. v 0.2. Add &quot;short&quot; attribute in order to show only minutes time.
+* May 12, 2014. v 0.1. First release.

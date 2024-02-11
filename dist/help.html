@@ -1,0 +1,53 @@
+<h1 id="pat_reading_time">pat_reading_time</h1>
+
+<p>This (very simple) Textpattern <span class="caps">CMS</span> plugin offers 2 tags to display a word counter and/or an estimated time reading for articles.</p>
+
+<h2 id="usages">Usages</h2>
+
+<h3 id="txp-tag"><span class="caps">TXP</span> tag</h3>
+
+<p><code>&lt;txp:pat_reading_time text=&quot;&quot; title=&quot;&quot; before=&quot;&quot; plural=&quot;&quot; wraptag=&quot;&quot; break=&quot;&quot; class=&quot;&quot; /&gt;</code></p>
+
+<h3 id="attributes">Attributes</h3>
+
+<ul>
+	<li><code>text</code> (string): set which content to apply for the result, among <strong>body</strong> or <strong>excerpt</strong>. Default: <em>body</em>.</li>
+	<li><code>title</code> (string): set the text before the result. Default: &quot;<em>Words:</em> &quot;.</li>
+	<li><code>plural</code> (string): plural character for &quot;word&quot;. Default: &quot;_s_&quot;.</li>
+	<li><code>before</code> (boolean): position with the count for the content of the &quot;title&quot; attribute (among <em>before</em>: <strong>1</strong> or <em>after</em>: <strong>0</strong>). Default: &quot;_1_&quot;.</li>
+	<li><code>wraptag</code> (letter): <span class="caps">HTML</span> container tag. Default: <em>p</em>.</li>
+	<li><code>break</code> (string): <span class="caps">HTML</span> break tag. Default: <em>br</em>.</li>
+	<li><code>class</code> (string): <span class="caps">HTML</span> class attribute. Default: &quot;_word&#45;count_&quot;.</li>
+</ul>
+
+<h3 id="txp-tag-1"><span class="caps">TXP</span> tag</h3>
+
+<p><code>&lt;txp:pat_estimate_time_reading text=&quot;&quot; title=&quot;&quot; short=&quot;&quot; before=&quot;&quot; minute=&quot;&quot; second=&quot;&quot; plural=&quot;&quot; wraptag=&quot;&quot; break=&quot;&quot; class=&quot;&quot; color=&quot;&quot; size=&quot;&quot; frequence=&quot;&quot; /&gt;</code></p>
+
+<h3 id="attributes-1">Attributes</h3>
+
+<ul>
+	<li><code>text</code> (string): set which content to apply for the result, among <strong>body</strong> or <strong>excerpt</strong>. Default: <em>body</em>.</li>
+	<li><code>title</code> (string): set the text before the result. Default: &quot;<em>Time to read:</em> &quot;.</li>
+	<li><code>short</code> (boolean): display only minutes time. Default: &quot;_0_&quot; (display full estimation time with seconds).</li>
+	<li><code>before</code> (boolean): position with the count for the content of the &quot;title&quot; attribute (among <em>before</em>: <strong>1</strong> or <em>after</em>: <strong>0</strong>). Default: &quot;_1_&quot;.</li>
+	<li><code>wraptag</code> (string): <span class="caps">HTML</span> container tag. Default: <em>p</em>.</li>
+	<li><code>break</code> (string): <span class="caps">HTML</span> breaking tag. Default: <em>br</em>.</li>
+	<li><code>minute</code> (integer): word for the &quot;minute&quot; time (i18n support). Default: &quot;_minute_&quot;.</li>
+	<li><code>second</code> (integer): word for the &quot;second&quot; time (i18n support). Default: &quot;_second_&quot;.</li>
+	<li><code>plural</code> (string): plural character for &quot;minute&quot; &amp; &quot;second&quot;. Default: &quot;_s_&quot;.</li>
+	<li><code>class</code> (string): <span class="caps">HTML</span> class attribute. Default: &quot;_time&#45;reading_&quot;.</li>
+	<li><code>color</code> (string): the color to apply for the <span class="caps">SVG</span> clock icon. Default: <code>#5d5d5d</code>.</li>
+	<li><code>size</code> (integer): the size for the <span class="caps">SVG</span> clock icon. Default: <code>18</code>.</li>
+	<li><code>frequence</code> (integer): the number of words read by minutes (average). Default: <em>200</em>.</li>
+</ul>
+
+<h2 id="changelog">Changelog</h2>
+
+<ul>
+	<li>February 8, 2024. v 0.2.3. Adding attributes. Cosmetic changes.</li>
+	<li>August 26, 2019. v 0.2.2. Add an <span class="caps">SVG</span> icon <del>with fallback</del>.</li>
+	<li>October 26, 2015. v 0.2.1. Display nothing if text content is empty.</li>
+	<li>August 6, 2014. v 0.2. Add &quot;short&quot; attribute in order to show only minutes time.</li>
+	<li>May 12, 2014. v 0.1. First release.</li>
+</ul>

@@ -170,4 +170,3 @@ function _pat_plural($count, $title, $sign)
 {
 	return ($count <= 1 ? $title : $title.$sign);
 }
-
