@@ -37,7 +37,7 @@ function pat_reading_time($atts)
 
 	extract(lAtts(array(
 		'text'		=> 'body',
-		'before'	=> 1,
+		'before'	=> '1',
 		'title'		=> 'Word',
 		'plural'	=> 's',
 		'charlist'	=> NULL,
@@ -55,7 +55,7 @@ function pat_reading_time($atts)
 	if ($content) {
 
 		$rs = _pat_words_count($content);
-		$result = ($before === true ? _pat_plural($rs, $title, $plural).' '.$rs : $rs.' '._pat_plural($rs, $title, $plural));
+		$result = ($before === "1" ? _pat_plural($title, $plural, $rs).' '.$rs : $rs.' '._pat_plural($rs, $title, $plural));
 		if ($break == 'br' or $break == 'hr') {
 			$break = "<$break />".n;
 		} else {
@@ -88,7 +88,7 @@ function pat_estimate_time_reading($atts)
 	extract(lAtts(array(
 		'text'		=> 'body',
 		'title'		=> 'Time to read: ',
-		'before' 	=> 1,
+		'before' 	=> '1',
 		'short'		=> false,
 		'minute'	=> 'minute',
 		'second' 	=> 'second',
@@ -115,17 +115,9 @@ function pat_estimate_time_reading($atts)
 
 		$icon = '<svg aria-hidden="true" width="'.$size.'" height="'.$size.'" viewBox="0 0 24 24"><path d="M12 2C6.489 2 2 6.489 2 12s4.489 10 10 10 10-4.489 10-10S17.511 2 12 2zm0 2c4.43 0 8 3.57 8 8s-3.57 8-8 8-8-3.57-8-8 3.57-8 8-8zm-1 2v6.414l4.293 4.293 1.414-1.414L13 11.586V6h-2z" fill="'.$color.'"></path></svg>';
 
-		$result = $short ? _pat_plural($m, $minute, $plural) : _pat_plural($m, $minute, $plural).' '.$s.' '._pat_plural($s, $second, $plural);
+		$result = ("0" !== $short ? _pat_plural($m, $minute, $plural) : _pat_plural($m, $minute, $plural).' '.$s.' '._pat_plural($s, $second, $plural));
 
-		if (false !== $before) {
-
-			$est = $icon.' '.$title.($m > 0 ? $m.' '.$result : $s._pat_plural($s, $second, $plural));
-
-		} elseif (true !== $before) {
-
-			$est = ($m > 0 ? $icon.' '.$m.' '.$result : $icon.' '.$s._pat_plural($s, $second, $plural)).' '.$title;
-
-		}
+		$est = ("0" !== $before ? $icon.' '.$title.' '.$m.' '.$result : $icon.' '.($m > 0 ? $m.' '.$result.' '.$title : $result.' '.$title));
 
 		if ($break == 'br' or $break == 'hr') {
 			$break = "<$break />".n;
@@ -169,4 +161,5 @@ function _pat_plural($count, $title, $sign)
 {
 	return ($count <= 1 ? $title : $title.$sign);
 }
+
 
