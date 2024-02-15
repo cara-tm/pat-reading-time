@@ -33,6 +33,7 @@ h3(#attributes-1). Attributes
 * @minute@ (integer): word for the &quot;minute&quot; time (i18n support). Default: &quot;_minute_&quot;.
 * @second@ (integer): word for the &quot;second&quot; time (i18n support). Default: &quot;_second_&quot;.
 * @plural@ (string): plural character for &quot;minute&quot; &amp; &quot;second&quot;. Default: &quot;_s_&quot;.
+* @less@ (string): Useful for short texts. Replaces zero values with an evaluation (for example "Less than 1 minute of reading"). Never displayed when reading time is greater than 1 minute. Default: unset.
 * @class@ (string): HTML class attribute. Default: &quot;_time&#45;reading_&quot;.
 * @color@ (string): the color to apply for the SVG clock icon. Default: @#5d5d5d@.
 * @size@ (integer): the size for the SVG clock icon. Default: @18@.
@@ -40,6 +41,7 @@ h3(#attributes-1). Attributes
 
 h2(#changelog). Changelog
 
+* February 15, 2024. v 0.2.4. Adding "less" attribute.
 * February 8, 2024. v 0.2.3. Adding attributes. Cosmetic changes. 
 * August 26, 2019. v 0.2.2. Add an SVG icon -with fallback-.
 * October 26, 2015. v 0.2.1. Display nothing if text content is empty.
